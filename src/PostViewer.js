@@ -11,8 +11,7 @@ export const GET_POSTS = gql`
       body
     }
   }
-`;
-
+`; 
 
 export default () => (
   <Query query={GET_POSTS}>

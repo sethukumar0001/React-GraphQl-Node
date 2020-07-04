@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import PostViewer from './PostViewer';
 
 class App extends Component {
