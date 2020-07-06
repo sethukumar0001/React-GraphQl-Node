@@ -11,11 +11,11 @@ const POSTS = [
 
 const schema = buildASTSchema(gql`
   type Query {
-    posts: [Post]
-    post(id: ID!): Post
+    postz: [PostN]
+    post(id: ID!): PostN
   }
 
-  type Post {
+  type PostN {
     id: ID
     author: String
     body: String
@@ -25,7 +25,7 @@ const schema = buildASTSchema(gql`
 const mapPost = (post, id) => post && ({ id, ...post });
 
 const root = {
-  posts: () => POSTS.map(mapPost),
+  postz: () => POSTS.map(mapPost),
   post: ({ id }) => mapPost(POSTS[id], id),
 };
 
