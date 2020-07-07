@@ -1,0 +1,10 @@
+var schema = buildSchema(type User {
+    id: String
+    name: String
+    job_title: String
+    email: String
+  }
+  type Query {
+    getUsers: [User],
+    getUserInfo(id: Int) : User
+  });

@@ -1,0 +1,13 @@
+var projectSchema = buildSchema(type ProjectDetails {
+    projectId: Int
+    projectName: String
+    projectDesc: String
+    mainTask: String
+    subTask:String
+    status:String
+    projectLead:String
+  }
+  type Query {
+    getProjects: [ProjectDetails],
+    getProjectInfo(id: Int) : ProjectDetails
+  });

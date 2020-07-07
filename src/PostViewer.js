@@ -5,29 +5,33 @@ import { Table } from 'reactstrap';
 
 export const GET_POSTS = gql`
   query GetPosts {
-    postz {
-      id
-      author
-      body
+    getProjects {
+      projectId
+      projectName
+      projectDesc
+      status
     }
   }
-`;  
+`;
 
 export default () => (
   <Query query={GET_POSTS}>
     {({ loading, data }) => !loading && (
+      console.log(data),
       <Table>
         <thead>
           <tr>
-            <th>Author</th>
-            <th>Body</th>
+            <th>Project Name</th>
+            <th>Project Description</th>
+            <th>Project Status</th>
           </tr>
         </thead>
         <tbody>
-          {data.postz.map(post => (
+          {data.getProjects.map(post => (
             <tr key={post.id}>
-              <td>{post.author}</td>
-              <td>{post.body}</td>
+              <td>{post.projectName}</td>
+              <td>{post.projectDesc}</td>
+              <td>{post.status}</td>
             </tr>
           ))}
         </tbody>
